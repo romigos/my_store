@@ -1,0 +1,8 @@
+<H1>Перелік товарів</H1>
+<% @items.each do |t| %>
+  <p><%= t.name %></p>
+  <p><%= t.weight %></p>
+  <p><%= t.real %></p>
+  <p><%= t.price %></p>
+  <p><%= t.description %></p>
+<% end %>

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_141330) do
     t.string "name"
     t.boolean "real"
     t.float "weight"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

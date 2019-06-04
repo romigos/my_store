@@ -1,5 +1,12 @@
 class ItemsController < ApplicationController
   def index
-    @iItems = Item.all
+    @items = Item.all
+  end
+
+  # /items/1 GET
+  def show
+    unless @item = Item.where(id: params[:id]).first
+      render :text => 'Not Found', :status => '404'
+    end
   end
 end
