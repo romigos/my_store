@@ -9,4 +9,10 @@ class ItemsController < ApplicationController
       render :text => 'Not Found', :status => '404'
     end
   end
+
+  # /items/new GET
+  def new
+    @item = Item.new
+  end
+  # /items/creat
 end
