@@ -25,6 +25,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  # /items/1/edit GET
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  # /items/1 PUT
+  def update
+    @item = Item.find(params[:id])
+    @items.update_attributes(item_params)
+    if @item.errors.empty?
+      redirect_to items_path(@item)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def item_params
