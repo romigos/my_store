@@ -1,9 +1,21 @@
 <H1>Перелік товарів</H1>
-<% @items.each do |t| %>
-  <p><%= t.name %></p>
-  <p><%= t.weight %></p>
-  <p><%= t.real %></p>
-  <p><%= t.price %></p>
-  <p><%= t.description %></p>
-  <%= link_to 'Редактування', @item, edit_item_path, :class => 'btn' %>
-<% end %>
+<table>
+  <tr>
+    <th>Назва товара</th>
+    <th>Вага</th>
+    <th>Доступність</th>
+    <th>Опис</th>
+    <th>Ціна</th>
+  </tr>
+  <% @items.each do |item| %>
+    <tr>
+      <th><%= item.name %></th>
+      <th><%= item.weight %></th>
+      <th><%= item.real %></th>
+      <th><%= item.price %></th>
+      <th><%= item.description %></th>
+      <th><%= link_to 'Редактування', edit_item_path(item) %></th>
+    </tr>
+  <% end %>
+
+</table>

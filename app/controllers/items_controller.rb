@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   # /items/1 PUT
   def update
     @item = Item.find(params[:id])
-    @items.update_attributes(item_params)
+    @item.update(item_params)
     if @item.errors.empty?
       redirect_to items_path(@item)
     else
@@ -41,6 +41,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  # /items/1 DELETE
+  def destroy
+
+  end
   private
 
   def item_params
