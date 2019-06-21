@@ -1,13 +1,12 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  # before_action :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @items = Item.all
   end
 
   # /items/1 GET
   def show
-    unless @item = Item.where(id: params[:id]).first
-      render :text => 'Not Found', :status => '404'
-    end
   end
 
   # /items/new GET
@@ -27,12 +26,10 @@ class ItemsController < ApplicationController
 
   # /items/1/edit GET
   def edit
-    @item = Item.find(params[:id])
   end
 
   # /items/1 PUT
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
     if @item.errors.empty?
       redirect_to items_path(@item)
@@ -43,12 +40,15 @@ class ItemsController < ApplicationController
 
   # /items/1 DELETE
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to items_path
   end
 
   private
+
+  def find_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:name, :description, :price, :real, :weight)
