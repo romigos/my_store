@@ -47,6 +47,7 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to items_path
   end
+
   private
 
   def item_params

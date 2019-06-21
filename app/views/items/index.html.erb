@@ -6,7 +6,6 @@
     <th>Доступність</th>
     <th>Опис</th>
     <th>Ціна</th>
-    <th></th>
   </tr>
   <% @items.each do |item| %>
     <tr>
@@ -16,8 +15,7 @@
       <th><%= item.price %></th>
       <th><%= item.description %></th>
       <th><%= link_to 'Редактування', edit_item_path(item) %></th>
-      <th><%= link_to 'Видалення', item_path(item), method: :delete, data: {confirm: 'Ви впевнені що хочете видалити?'} %></th>
+      <th><%= link_to 'Видалити', item_path(item), method: :delete, data: {confirm: 'Ви упевнені, що хочете видалити цей запис?'} %></th>
     </tr>
   <% end %>
-
 </table>
