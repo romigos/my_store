@@ -6,16 +6,18 @@
     <th>Доступність</th>
     <th>Опис</th>
     <th>Ціна</th>
+    <th></th>
   </tr>
   <% @items.each do |item| %>
     <tr>
-      <th><%= item.name %></th>
-      <th><%= item.weight %></th>
-      <th><%= item.real %></th>
-      <th><%= item.price %></th>
-      <th><%= item.description %></th>
-      <th><%= link_to 'Редактування', edit_item_path(item) %></th>
-      <th><%= link_to 'Видалити', item_path(item), method: :delete, data: {confirm: 'Ви упевнені, що хочете видалити цей запис?'} %></th>
+      <td><%= item.name %></td>
+      <td><%= item.weight %></td>
+      <td><%= item.real %></td>
+      <td><%= item.price %></td>
+      <td><%= item.description %></td>
+      <td><%= link_to 'Редактування', edit_item_path(item) %></td>
+      <td><%= link_to 'Видалити', item_path(item), method: :delete, data: {confirm: 'Ви упевнені, що хочете видалити цей запис?'} %></td>
+      <td>Рейтинг:<%= item.votes_count %>, <%= link_to '+', upvote_item_path(item) %></td>
     </tr>
   <% end %>
 </table>

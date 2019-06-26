@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :find_item, only: [:show, :edit, :update, :destroy, :upvote]
   # before_action :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @items = Item.all
@@ -42,6 +42,11 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to items_path
+  end
+
+  def upvote
+    @item.increment!(:votes_count)
+    redirect_to action: :index
   end
 
   private
