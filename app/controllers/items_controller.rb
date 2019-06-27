@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def expensive
+    @items = Item.where('price > 1000')
+    render 'index'
+  end
+
   # /items/1 GET
   def show
   end
