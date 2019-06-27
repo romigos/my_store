@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:show, :edit, :update, :destroy, :upvote]
-  before_action :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_action :find_item, only: %i[show edit update destroy upvote]
+  before_action :check_if_admin, only: %i[edit update destroy new create]
   def index
     @items = Item.all
   end
@@ -11,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   # /items/1 GET
-  def show
+  def show;
   end
 
   # /items/new GET
@@ -30,7 +32,7 @@ class ItemsController < ApplicationController
   end
 
   # /items/1/edit GET
-  def edit
+  def edit;
   end
 
   # /items/1 PUT
