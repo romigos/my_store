@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :find_item, only: [:show, :edit, :update, :destroy, :upvote]
-  # before_action :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
+  before_action :check_if_admin, only: [:edit, :update, :destroy, :new, :create]
   def index
     @items = Item.all
   end
@@ -58,6 +58,7 @@ class ItemsController < ApplicationController
 
   def find_item
     @item = Item.find(params[:id])
+    render_404 unless @item
   end
 
   def item_params
