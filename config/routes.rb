@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
   resources :items do
     get :upvote, on: :member
     get :expensive, on: :collection
