@@ -1,14 +1,5 @@
 <h1>Редактування товару</h1>
 <%= form_for @item do |item| %>
-  <p><%= item.label 'Назва' %></p>
-  <p><%= item.text_field :name %></p>
-  <p><%= item.label 'Опис' %></p>
-  <p><%= item.text_field :description %></p>
-  <p><%= item.label 'Ціна' %></p>
-  <p><%= item.text_field :price %></p>
-  <p><%= item.label 'Наявність' %></p>
-  <p><%= item.check_box :real %></p>
-  <p><%= item.label 'Вага' %></p>
-  <p><%= item.text_field :weight %></p></br>
+  <%= render partial: 'form', locals: {item: item} %>
   <%= item.submit 'Зберегти' %>
 <% end %>
