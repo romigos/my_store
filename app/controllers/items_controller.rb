@@ -13,8 +13,7 @@ class ItemsController < ApplicationController
   end
 
   # /items/1 GET
-  def show;
-  end
+  def show; end
 
   # /items/new GET
   def new
@@ -32,8 +31,7 @@ class ItemsController < ApplicationController
   end
 
   # /items/1/edit GET
-  def edit;
-  end
+  def edit; end
 
   # /items/1 PUT
   def update
