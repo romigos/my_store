@@ -1,5 +1,5 @@
 <h1>Створення нового товару</h1>
 <%= form_for @item do |item| %>
-  <%= render partial: 'form', locals: {f: item} %>
+  <%= render partial: 'form', locals: {item: item} %>
   <%= item.submit 'Зберегти' %>
 <% end %>

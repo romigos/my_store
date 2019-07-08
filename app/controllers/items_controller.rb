@@ -2,7 +2,7 @@
 
 class ItemsController < ApplicationController
   before_action :find_item, only: %i[show edit update destroy upvote]
-  before_action :check_if_admin, only: %i[edit update destroy new create]
+  # before_action :check_if_admin, only: %i[edit update destroy new create]
   def index
     @items = Item.all
   end
@@ -37,8 +37,10 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
     if @item.errors.empty?
+      flash[:success] = "Item successfully updated"
       redirect_to items_path(@item)
     else
+      flash.now[:error] = "You make a mistakes in your form! Please correct them"
       render 'edit'
     end
   end
