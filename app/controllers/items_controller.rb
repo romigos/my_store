@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   # before_action :check_if_admin, only: %i[edit update destroy new create]
   def index
     @items = Item.all
+      #@items = @items.includes(:image)
   end
 
   def expensive
