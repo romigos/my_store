@@ -1,0 +1,7 @@
+%h1= @item.name
+%ul
+  %li= "#{@item.price} грн."
+  %li= "#{@item.weight} кг."
+  %li= @item.real
+  %li= @item.description
+= render partial:'shared/email'

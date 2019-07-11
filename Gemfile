@@ -11,6 +11,7 @@ gem 'rails', '~> 5.2.3'
 gem 'carrierwave'
 gem 'devise'
 gem 'sqlite3'
+gem 'haml-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
