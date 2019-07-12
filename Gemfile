@@ -9,11 +9,12 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'carrierwave'
+gem 'simple_form'
 gem 'devise'
 gem 'sqlite3'
 gem 'haml-rails'
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.0'
+gem 'bootstrap-sass'
+gem 'sassc-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

@@ -1,0 +1,4 @@
+%h1 Редактування товару
+= simple_form_for(@item, html: { class: 'col-sm-4' }) do |item|
+  = render partial: 'form', locals: {item: item}
+  %p= item.submit 'Зберегти'
