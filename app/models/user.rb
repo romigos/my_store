@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_many :orders
   has_many :comments
   has_many :blog_posts
-  mount_uploader :file, ImageUploader
+  mount_uploader :image, ImageUploader
 end

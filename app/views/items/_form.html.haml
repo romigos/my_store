@@ -3,4 +3,5 @@
 = item.input :price, label: 'Ціна'
 = item.check_box :real, label: 'Наявність'
 = item.input :weight, label: 'Вага'
+= item.input :image, as: :file, label: 'Фото'
 = hidden_field_tag :admin, params[:admin]

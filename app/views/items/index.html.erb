@@ -1,0 +1,28 @@
+<H1>Перелік товарів</H1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Назва товара</th>
+    <th>Вага</th>
+    <th>Доступність</th>
+    <th>Ціна</th>
+    <th>Опис</th>
+    <th>Створення</th>
+    <th></th>
+    <th>Рейтинг</th>
+  </tr>
+  <% @items.each do |f| %>
+    <tr>
+      <td><%= f.id %></td>
+      <td><%= image_tag f.image.thumb if @item.image? %> <%= link_to f.name, item_path(f) %></td>
+      <td><%= f.weight %></td>
+      <td><%= f.real %></td>
+      <td><%= f.price %></td>
+      <td><%= f.description %></td>
+      <td><%= f.created_at.to_s.sub('2012', '2013') %></td>
+      <td><%= link_to 'Редактування', edit_item_path(f) %></td>
+      <td><%= link_to 'Видалити', item_path(item), method: :delete, data: {confirm: 'Ви упевнені, що хочете видалити цей запис?'} %></td>
+      <td><%= f.votes_count %>, <%= link_to '+', upvote_item_path(f) %></td>
+    </tr>
+  <% end %>
+</table>
