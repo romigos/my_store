@@ -1,7 +1,7 @@
-= item.input :name, label: 'Назва'
-= item.input :description, label: 'Опис'
-= item.input :price, label: 'Ціна'
-= item.check_box :real, label: 'Наявність'
-= item.input :weight, label: 'Вага'
-= item.input :image, as: :file, label: 'Фото'
+= item.input :name, label: t('item.name')
+= item.input :description, label: t('item.description')
+= item.input :price, label: t('item.price')
+= item.input :real, label: t('item.real')
+= item.input :weight, label: t('item.weight')
+= item.input :image, as: :file, label: t('item.image')
 = hidden_field_tag :admin, params[:admin]

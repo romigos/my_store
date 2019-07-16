@@ -1,8 +1,9 @@
 %h1= @item.name
 %ul
   %li= "#{@item.price} грн."
-  %li= "#{@item.weight} кг."
+  %li= "#{@item.weight}  кг."
   %li= @item.real
   %li= @item.description
   %li= @item.image
+  %li= t('item.weight')
 = render partial:'shared/email'
