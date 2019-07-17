@@ -29,11 +29,11 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ru:
+uk:
   item:
-    name: 'Назва'
-    description: 'Опис'
-    price: 'Ціна'
-    real: 'Наявність'
-    weight: 'Вес'
-    image: 'Фото'
+    name: 'Назва:'
+    price: 'Ціна:'
+    description: 'Короткий опис товару:'
+    weight: 'Вага:'
+    real: '  Наявність:'
+    image: 'Зображення:'
