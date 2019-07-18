@@ -18,5 +18,11 @@ module MyStore
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.default_locale = :uk
+
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework :rspec, fixtures: true, views: false
+      g.fixture_replacement :factory_girl, dir: "spec/factories"
+    end
   end
 end

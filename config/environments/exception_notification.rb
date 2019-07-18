@@ -20,8 +20,8 @@ if Rails.env == "production" || Rails.env == "staging" || Rails.env == "developm
   MyStore::Application.config.middleware.use ExceptionNotification::Rack,
                                              email: {
                                                  email_prefix: "[#{server_name} error] ",
-                                                 sender_address: "bolist@ukr.net",
-                                                 exception_recipients: ["bolist@ukr.net"]
+                                                 sender_address: "bolistovskiyroman@gmail.com",
+                                                 exception_recipients: ["bolistovskiyroman@gmail.com"]
                                              },
                                              ignore_exceptions: exceptions
 
