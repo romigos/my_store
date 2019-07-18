@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'sassc-rails'
+gem 'exception_notification'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

@@ -17,7 +17,12 @@ class ItemsController < ApplicationController
   end
 
   # /items/1 GET
-  def show; end
+  def show
+    raise 'exeption test'
+    unless @item
+      render text: 'Page not found', status: 404
+    end
+  end
 
   # /items/new GET
   def new
