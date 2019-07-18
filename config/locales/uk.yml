@@ -31,9 +31,29 @@
 
 uk:
   item:
-    name: 'Назва:'
-    price: 'Ціна:'
-    description: 'Короткий опис товару:'
-    weight: 'Вага:'
-    real: '  Наявність:'
-    image: 'Зображення:'
+    price:           'Ціна'
+    name:            'Назва'
+    description:     'Опис товара'
+    weight:          'Вага'
+    image:           'Зображення'
+  activerecord:
+    errors:
+      models:
+        item:
+          attributes:
+            name:
+              blank: 'повина бути вказана'
+            price:
+              blank: 'повина бути вказана'
+              greater_than: 'повина бути вказана більше 0'
+
+
+    models:
+      item: 'Товар'
+    attributes:
+      item:
+        price:           'Ціна'
+        name:            'Назва'
+        description:     'Опис товара'
+        weight:          'Вага'
+        image:           'Зображення'

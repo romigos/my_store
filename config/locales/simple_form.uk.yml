@@ -13,16 +13,10 @@ uk:
       labels:
         item:
           name: 'Назва товара'
-      # Examples
-      # labels:
-      #   defaults:
-      #     password: 'Password'
-      #   user:
-      #     new:
-      #       email: 'E-mail to sign in.'
-      #     edit:
-      #       email: 'E-mail.'
       hints:
+        item:
+          name: 'Кількість симовлів не повинна бути більше 80'
+
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
