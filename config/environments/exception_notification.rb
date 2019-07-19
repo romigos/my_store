@@ -12,17 +12,17 @@ if Rails.env == "production" || Rails.env == "staging" || Rails.env == "developm
                 when "staging" then
                   "staging.mystore.com"
                 when "development" then
-                  "DEVELOPMENT mystore"
+                  "DEVELOPMENT screencast.storeapp"
                 else
                   "unknown env mystore"
                 end
 
-  MyStore::Application.config.middleware.use ExceptionNotification::Rack,
-                                             email: {
-                                                 email_prefix: "[#{server_name} error] ",
-                                                 sender_address: "bolistovskiyroman@gmail.com",
-                                                 exception_recipients: ["bolistovskiyroman@gmail.com"]
-                                             },
-                                             ignore_exceptions: exceptions
+  Rails.application.config.middleware.use ExceptionNotification::Rack,
+                                          email: {
+                                              email_prefix: "[#{server_name} error]",
+                                              sender_address: "bolistovskiyroman@gmail.com",
+                                              exception_recipients: ["bolistovskiyroman@gmail.com"]
+                                          },
+                                          ignore_exceptions: exceptions
 
 end
